@@ -1,0 +1,20 @@
+# (Alterated Execersice) Get divisors from a array by number gived by user
+items = range(2, 11)
+for elem in items:
+  print(elem)
+
+num = int(input("Give me a number: "))
+print(list(filter(lambda x: x % num == 0, items)))
+
+# Solution Web
+num = int(input("Please choose a number to divide: "))
+
+listRange = list(range(1, num + 1))
+
+divisorList = []
+
+for number in listRange:
+  if num % number == 0:
+    divisorList.append(number)
+
+print(divisorList)

@@ -1,0 +1,17 @@
+def get_integer():
+  return int(input("Give me a number: "))
+
+def get_array_number(num):
+  return range(2, num)
+
+
+num = get_integer()
+items = get_array_number(num)
+
+is_prime = True
+for elem in items:
+  print(elem, num%elem, num%elem == 0)
+  if num%elem == 0:
+    is_prime = False
+
+print('Is prime:', is_prime)

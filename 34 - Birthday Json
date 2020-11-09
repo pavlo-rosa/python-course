@@ -1,0 +1,64 @@
+import json
+
+my_file = "./info.json"
+
+
+def remove_item(item_pos, my_dictionary):
+  del my_dictionary[item_pos]
+  update_file(my_dictionary)
+  print('removed')
+
+
+def add_item(my_dictionary):
+  name = input("Name: ")
+  birthday = input("Birthday: ")
+  my_dictionary.append({
+    'name': name,
+    'born': birthday
+  })
+  update_file(my_dictionary)
+  print('added')
+
+def print_dictionary(my_dictionary):
+  i = 0
+  print("MY DICTIONARY:")
+  for elem in my_dictionary:
+    print('\t', i, elem['name'])
+    i += 1
+
+def update_file(my_dictionary):
+  with open(my_file, "w") as file:
+    json.dump(my_dictionary, file)
+  file.close()
+  print_dictionary(my_dictionary)
+
+def main():
+  my_dictionary = None
+  with open(my_file, "r") as f:
+    my_dictionary = json.load(f)
+  f.close()
+
+
+  print("Welcome to the birthday dictionary. We know the birthdays of:")
+  print_dictionary(my_dictionary)
+
+  choice = int(input("Who's birthday do you want to look up?\n"))
+  print("\t" + my_dictionary[choice]['name'] + "'s is " + my_dictionary[choice]['born'])
+
+  is_exit = False
+  while not is_exit:
+    action = input("Do you want add or remove item or quit? a/r/q\n")
+    if action == 'r':
+      remove_item(int(input("Item to remove:\n")), my_dictionary)
+    elif action == 'a':
+      add_item(my_dictionary)
+    elif action == 'q':
+      is_exit = True
+    else:
+      print('Character unrecognized')
+
+  print('Bye.')
+
+
+main()
+

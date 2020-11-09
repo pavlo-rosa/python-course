@@ -1,0 +1,24 @@
+initial = "My name is Michele"
+#My solution
+def reverse_string(initial):
+  print(initial)
+  items_string = initial.split(' ')
+
+  result = []
+  for i in reversed(range(len(items_string))):
+    result.append(items_string[i])
+
+  return " ".join(result)
+
+#Better solution
+def reverseWord(w):
+  return ' '.join(w.split()[::-1])
+
+#NOTES: array[::-1]
+#list[<start>:<stop>:<step>]
+#a = '1234'
+#print(a[::-1])
+
+
+print(reverse_string(initial))
+

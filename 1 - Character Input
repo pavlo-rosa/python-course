@@ -1,0 +1,9 @@
+import datetime
+
+name = input("Give me your name: ")
+print("Your name is " + name)
+
+age = int(input("Give me your age: "))
+
+my_date = datetime.datetime.now()
+print("You will have 100 years in: " + str((my_date.year - age) + 100))

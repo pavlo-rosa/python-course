@@ -1,0 +1,21 @@
+items = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+
+# Base
+for element in items:
+  if element < 5:
+    print(element)
+
+# Extra 1
+print("\nExtra 1")
+items_filtered = list(filter(lambda x: x < 5, items))
+for element in items_filtered:
+  print(element)
+
+# Extra 2
+print("\nExtra 2")
+for element in list(filter(lambda x: x < 5, items)): print(element)
+
+# Extra 3
+print("\nExtra 3")
+num = int(input("Give me a number: "))
+for element in list(filter(lambda x: x < num, items)): print(element)

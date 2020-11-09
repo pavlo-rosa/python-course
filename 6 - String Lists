@@ -1,0 +1,11 @@
+import math
+
+text = "reconocer"
+print("Text:", text)
+is_palindrome = True
+for i in range(math.floor(len(text) / 2)):
+  if text[i] != text[(len(text) - 1) - i]:
+    is_palindrome = False
+    break
+
+print("Is Palindrome:", is_palindrome)
