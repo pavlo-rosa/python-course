@@ -1,2 +1,2 @@
 Exercises from:
-https://www.pragit initcticepython.org
+https://www.pragitinitcticepython.org
